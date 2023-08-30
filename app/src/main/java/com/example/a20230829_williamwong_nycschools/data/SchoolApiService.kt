@@ -9,5 +9,5 @@ import retrofit2.http.Query
  */
 interface SchoolApiService {
     @GET
-    suspend fun getPokemonList(@Query(Constants.SCHOOL_NAME_QUERY)query: String): List<SchoolDto>
+    suspend fun getSchools(@Query(Constants.SCHOOL_NAME_QUERY)query: String): List<SchoolDto>
 }
