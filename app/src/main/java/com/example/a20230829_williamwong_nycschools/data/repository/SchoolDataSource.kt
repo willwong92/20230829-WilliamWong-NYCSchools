@@ -1,5 +1,6 @@
 package com.example.a20230829_williamwong_nycschools.data.repository
 
+import com.example.a20230829_williamwong_nycschools.domain.util.Result
 import com.example.a20230829_williamwong_nycschools.domain.model.School
 
 /**
@@ -7,6 +8,6 @@ import com.example.a20230829_williamwong_nycschools.domain.model.School
  */
 interface SchoolDataSource {
     interface Remote {
-        suspend fun getSchools(): List<School>
+        suspend fun getSchools(): Result<List<School>>
     }
 }
