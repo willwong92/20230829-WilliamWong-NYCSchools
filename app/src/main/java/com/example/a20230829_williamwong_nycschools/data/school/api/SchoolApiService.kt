@@ -1,6 +1,7 @@
-package com.example.a20230829_williamwong_nycschools.data
+package com.example.a20230829_williamwong_nycschools.data.school.api
 
-import com.example.a20230829_williamwong_nycschools.data.dto.SchoolDto
+import com.example.a20230829_williamwong_nycschools.data.Constants
+import com.example.a20230829_williamwong_nycschools.data.school.dto.SchoolDto
 import retrofit2.http.GET
 import retrofit2.http.Query
 

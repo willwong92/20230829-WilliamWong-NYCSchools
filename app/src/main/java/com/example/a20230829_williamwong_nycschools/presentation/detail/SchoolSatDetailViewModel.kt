@@ -1,6 +1,8 @@
 package com.example.a20230829_williamwong_nycschools.presentation.detail
 
 import androidx.lifecycle.ViewModel
+import com.example.a20230829_williamwong_nycschools.domain.sat.usecase.GetSatResults
+import com.example.a20230829_williamwong_nycschools.domain.util.onSuccess
 import com.example.a20230829_williamwong_nycschools.presentation.detail.state.SchoolSatDetailUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -12,22 +14,22 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class SchoolSatDetailViewModel @Inject constructor(
-    //private val getSchoolSatDetails: GetSchoolSatDetails
+    private val getSatResults: GetSatResults
 ): ViewModel() {
 
     private val _uiState: MutableStateFlow<SchoolSatDetailUiState> = MutableStateFlow(SchoolSatDetailUiState())
     val uiState = _uiState.asStateFlow()
 
     suspend fun getSchoolSatDetail(schoolId: String) {
-        /*getSchoolSatDetails.invoke(schoolId).onSuccess {
+        getSatResults.invoke(schoolId).onSuccess {
             _uiState.value = SchoolSatDetailUiState(
-                schoolName = scho,
-                hp = it.hp,
-                level = it.level,
-                types = it.types ?: emptyList(),
-                image = it.images.large
+                schoolName = it.schoolName,
+                criticalReadingAvgScore = it.criticalReadingAvgScore,
+                mathAvgScore = it.mathAvgScore,
+                testTakers = it.testTakers,
+                writingAvgScore = it.writingAvgScore
             )
-        }*/
+        }
     }
 
 }

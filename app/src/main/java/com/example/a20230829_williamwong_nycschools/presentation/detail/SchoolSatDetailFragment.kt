@@ -35,13 +35,19 @@ class SchoolSatDetailFragment : BaseFragment<FragmentSchoolSatDetailBinding>() {
 
     private fun observeViewModel() = with(viewModel) {
         viewLifecycleOwner.lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                launch { uiState.collect { handleSchoolSatDetailsUiState(it) } }
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                uiState.collect {
+                    handleSchoolSatDetailsUiState(it)
+                }
             }
         }
     }
 
     private fun handleSchoolSatDetailsUiState(schoolState: SchoolSatDetailUiState) {
-
+        binding.nameTv.text = schoolState.schoolName
+        binding.testTakersTv.text = schoolState.testTakers
+        binding.readingAvgTv.text = schoolState.criticalReadingAvgScore
+        binding.mathAvgTv.text = schoolState.mathAvgScore
+        binding.writingAvgTv.text = schoolState.writingAvgScore
     }
 }

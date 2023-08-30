@@ -1,4 +1,4 @@
-package com.example.a20230829_williamwong_nycschools.data.dto
+package com.example.a20230829_williamwong_nycschools.data.school.dto
 
 import com.google.gson.annotations.SerializedName
 

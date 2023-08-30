@@ -1,9 +1,9 @@
-package com.example.a20230829_williamwong_nycschools.data.repository
+package com.example.a20230829_williamwong_nycschools.data.school.repository
 
 import com.example.a20230829_williamwong_nycschools.domain.util.Result
-import com.example.a20230829_williamwong_nycschools.data.SchoolApiService
-import com.example.a20230829_williamwong_nycschools.data.`package`.toDomain
-import com.example.a20230829_williamwong_nycschools.domain.model.School
+import com.example.a20230829_williamwong_nycschools.data.school.api.SchoolApiService
+import com.example.a20230829_williamwong_nycschools.data.school.mapper.toDomain
+import com.example.a20230829_williamwong_nycschools.domain.school.model.School
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 

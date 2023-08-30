@@ -1,7 +1,8 @@
 package com.example.a20230829_williamwong_nycschools.presentation.di.module
 
-import com.example.a20230829_williamwong_nycschools.data.Constants.Companion.BASE_URL
-import com.example.a20230829_williamwong_nycschools.data.SchoolApiService
+import com.example.a20230829_williamwong_nycschools.data.Constants.Companion.SCHOOL_BASE_URL
+import com.example.a20230829_williamwong_nycschools.data.sat.api.SatApiService
+import com.example.a20230829_williamwong_nycschools.data.school.api.SchoolApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -44,10 +45,23 @@ class NetworkModule {
         okHttpClient: OkHttpClient
     ): SchoolApiService {
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(SCHOOL_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
             .create(SchoolApiService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideRetrofitSatResultService(
+        okHttpClient: OkHttpClient
+    ): SatApiService {
+        return Retrofit.Builder()
+            .baseUrl(SCHOOL_BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient)
+            .build()
+            .create(SatApiService::class.java)
     }
 }

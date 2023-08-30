@@ -1,4 +1,4 @@
-package com.example.a20230829_williamwong_nycschools.domain.model
+package com.example.a20230829_williamwong_nycschools.domain.school.model
 
 /**
  * @author by William Wong on 08/29/2023

@@ -5,7 +5,8 @@ package com.example.a20230829_williamwong_nycschools.presentation.detail.state
  */
 data class SchoolSatDetailUiState(
     val schoolName: String = "",
-    val location: String = "",
-    val city: String = "",
-    val zipCode: String = ""
+    val testTakers: String = "",
+    val criticalReadingAvgScore: String = "",
+    val mathAvgScore: String = "",
+    val writingAvgScore: String = "",
 )

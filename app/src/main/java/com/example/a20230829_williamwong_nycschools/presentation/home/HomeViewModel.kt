@@ -2,7 +2,7 @@ package com.example.a20230829_williamwong_nycschools.presentation.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.a20230829_williamwong_nycschools.domain.usecase.GetSchools
+import com.example.a20230829_williamwong_nycschools.domain.school.usecase.GetSchools
 import com.example.a20230829_williamwong_nycschools.domain.util.onError
 import com.example.a20230829_williamwong_nycschools.domain.util.onSuccess
 import com.example.a20230829_williamwong_nycschools.presentation.home.state.HomeUiState
