@@ -5,8 +5,8 @@ package com.example.a20230829_williamwong_nycschools.data
  */
 class Constants {
     companion object {
-        const val BASE_URL = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
+        const val BASE_URL = "https://data.cityofnewyork.us/resource/"
         const val SCHOOL_NAME_QUERY = "school_name"
-        const val PAGE_SIZE = 50
+        const val PAGE_SIZE = 20
     }
 }

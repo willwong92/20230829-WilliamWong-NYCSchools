@@ -10,6 +10,6 @@ fun SchoolDto.toDomain() =  School(
     id = id,
     schoolName = schoolName,
     location = location,
-    city = location,
+    city = city,
     zipCode = zipCode
 )

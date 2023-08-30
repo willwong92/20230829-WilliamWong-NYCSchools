@@ -11,7 +11,7 @@ import com.example.a20230829_williamwong_nycschools.domain.model.School
 /**
  * @author by William Wong on 08/29/2023
  */
-class SchoolAdapter(private val onClick: ((schoolId: String) -> Unit)) : ListAdapter<School, SchoolAdapter.SchoolViewHolder>(DiffCallback()) {
+class SchoolAdapter(/*private val onClick: ((schoolId: String) -> Unit)*/) : ListAdapter<School, SchoolAdapter.SchoolViewHolder>(DiffCallback()) {
     override fun onBindViewHolder(holder: SchoolViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
@@ -24,7 +24,7 @@ class SchoolAdapter(private val onClick: ((schoolId: String) -> Unit)) : ListAda
         init {
             binding.root.setOnClickListener {
                 val id = getItem(adapterPosition).id
-                onClick(id)
+                //onClick(id)
             }
         }
         fun bind(school: School) {

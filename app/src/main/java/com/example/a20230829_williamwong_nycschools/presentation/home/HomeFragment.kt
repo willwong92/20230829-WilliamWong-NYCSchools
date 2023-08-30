@@ -39,7 +39,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private fun initRecyclerView() {
         binding.schoolRv.apply {
             layoutManager = GridLayoutManager(activity, 2)
-            //adapter = SchoolAdapter()
+            adapter = SchoolAdapter()
             addItemDecoration(DividerItemDecoration(activity, LinearLayoutManager.VERTICAL))
         }
     }
@@ -47,7 +47,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private fun observeViewModel() = with(viewModel) {
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                launch { uiState.collect { handleHomeUiState(it) } }
+                launch {
+                    uiState.collect {
+                        handleHomeUiState(it)
+                    }
+                }
             }
         }
     }
