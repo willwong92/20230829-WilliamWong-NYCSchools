@@ -1,19 +1,16 @@
-package com.example.a20230829_williamwong_nycschools.presentation.base
+package com.example.a20230829_williamwong_nycschools.presentation.ui.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
-import javax.inject.Inject
 
 /**
  * @author by William Wong on 08/29/2023
  */
-abstract class BaseFragment<VB: ViewBinding> : DialogFragment() {
+abstract class BaseFragment<VB: ViewBinding> : Fragment() {
 
     protected val binding: VB by lazy { inflateViewBinding(layoutInflater) }
 

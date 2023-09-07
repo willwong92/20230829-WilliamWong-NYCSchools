@@ -1,11 +1,11 @@
-package com.example.a20230829_williamwong_nycschools.presentation.home
+package com.example.a20230829_williamwong_nycschools.presentation.ui.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.a20230829_williamwong_nycschools.domain.school.usecase.GetSchools
 import com.example.a20230829_williamwong_nycschools.domain.util.onError
 import com.example.a20230829_williamwong_nycschools.domain.util.onSuccess
-import com.example.a20230829_williamwong_nycschools.presentation.home.state.HomeUiState
+import com.example.a20230829_williamwong_nycschools.presentation.ui.home.state.HomeUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

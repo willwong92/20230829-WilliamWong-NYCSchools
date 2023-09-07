@@ -1,4 +1,4 @@
-package com.example.a20230829_williamwong_nycschools.presentation.home.state
+package com.example.a20230829_williamwong_nycschools.presentation.ui.home.state
 
 import com.example.a20230829_williamwong_nycschools.domain.school.model.School
 

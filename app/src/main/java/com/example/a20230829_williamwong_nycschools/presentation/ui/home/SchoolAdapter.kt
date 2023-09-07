@@ -1,4 +1,4 @@
-package com.example.a20230829_williamwong_nycschools.presentation.home
+package com.example.a20230829_williamwong_nycschools.presentation.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -11,7 +11,9 @@ import com.example.a20230829_williamwong_nycschools.domain.school.model.School
 /**
  * @author by William Wong on 08/29/2023
  */
-class SchoolAdapter(private val onClick: ((schoolId: String) -> Unit)) : ListAdapter<School, SchoolAdapter.SchoolViewHolder>(DiffCallback()) {
+class SchoolAdapter(private val onClick: ((schoolId: String) -> Unit)) : ListAdapter<School, SchoolAdapter.SchoolViewHolder>(
+    DiffCallback()
+) {
     override fun onBindViewHolder(holder: SchoolViewHolder, position: Int) {
         holder.bind(getItem(position))
     }

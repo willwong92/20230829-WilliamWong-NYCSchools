@@ -13,7 +13,7 @@ class SatRemoteDataSource(
 ) : SatDataSource.Remote {
     override suspend fun getSatResults(schoolId: String): Result<SatResult> = withContext(coroutineDispatcher) {
         return@withContext try {
-            val result = satApiService.getSatScores(schoolId)
+            val result = satApiService.getSatScores(schoolId).first()
             Result.Success(result.toDomain())
         } catch (e: Exception) {
             Result.Error(e)

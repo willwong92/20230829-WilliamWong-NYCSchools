@@ -1,4 +1,4 @@
-package com.example.a20230829_williamwong_nycschools.presentation.home
+package com.example.a20230829_williamwong_nycschools.presentation.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.a20230829_williamwong_nycschools.databinding.FragmentHomeBinding
-import com.example.a20230829_williamwong_nycschools.presentation.base.BaseFragment
-import com.example.a20230829_williamwong_nycschools.presentation.home.state.HomeUiState
+import com.example.a20230829_williamwong_nycschools.presentation.ui.base.BaseFragment
+import com.example.a20230829_williamwong_nycschools.presentation.ui.home.state.HomeUiState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -25,7 +25,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
-    val viewModel: HomeViewModel by viewModels()
+    private val viewModel: HomeViewModel by viewModels()
 
     override fun inflateViewBinding(inflater: LayoutInflater): FragmentHomeBinding {
         return FragmentHomeBinding.inflate(inflater)
@@ -60,7 +60,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private fun handleHomeUiState(it: HomeUiState) {
         (binding.schoolRv.adapter as SchoolAdapter).submitList(it.schools)
         binding.progressBar.isVisible = it.showLoading
-        if (it.errorMessage != null) Toast.makeText(requireActivity().applicationContext, it.errorMessage, Toast.LENGTH_LONG).show()
+        it.errorMessage?.let { Toast.makeText(requireActivity().applicationContext, it, Toast.LENGTH_LONG).show() }
     }
 
     private fun navigateToSatDetails(id: String) {

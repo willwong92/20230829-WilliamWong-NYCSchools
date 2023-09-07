@@ -1,4 +1,4 @@
-package com.example.a20230829_williamwong_nycschools.presentation.base
+package com.example.a20230829_williamwong_nycschools.presentation.ui.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding
  */
 abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
 
-    protected val binding: VB by lazy { inflateViewBinding(layoutInflater) }
+    private val binding: VB by lazy { inflateViewBinding(layoutInflater) }
 
     protected abstract fun inflateViewBinding(inflater: LayoutInflater): VB
 

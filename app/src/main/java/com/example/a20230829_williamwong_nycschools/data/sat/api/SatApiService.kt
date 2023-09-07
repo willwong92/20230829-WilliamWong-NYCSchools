@@ -9,5 +9,5 @@ import retrofit2.http.Query
  */
 interface SatApiService {
     @GET("f9bf-2cp4.json")
-    suspend fun getSatScores(@Query("dbn")query: String): SatResultDto
+    suspend fun getSatScores(@Query("dbn")query: String): List<SatResultDto>
 }

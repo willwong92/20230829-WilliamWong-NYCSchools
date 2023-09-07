@@ -6,52 +6,125 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/name_tv"
-        android:textSize="35sp"
-        android:textStyle="bold"
+    <ProgressBar
+        android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:paddingHorizontal="@dimen/title_padding">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+    </TextView>
+
+    <TextView
+        android:id="@+id/test_takers_label"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:layout_marginTop="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/test_takers_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_tv"
+        app:layout_constraintStart_toStartOf="parent">
     </TextView>
 
     <TextView
         android:id="@+id/test_takers_tv"
-        android:textSize="35sp"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:layout_marginTop="4dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/name_tv"
-        app:layout_constraintStart_toStartOf="parent"
-        android:padding="@dimen/title_padding">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/test_takers_label"
+        app:layout_constraintStart_toStartOf="parent">
+    </TextView>
+
+    <TextView
+        android:id="@+id/reading_avg_label"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/reading_avg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/test_takers_tv"
+        app:layout_constraintStart_toStartOf="parent">
     </TextView>
 
     <TextView
         android:id="@+id/reading_avg_tv"
-        android:textSize="30sp"
-        android:textStyle="bold"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:layout_marginTop="4dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/test_takers_tv"
-        app:layout_constraintStart_toStartOf="parent"
-        android:paddingHorizontal="@dimen/title_padding">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reading_avg_label"
+        app:layout_constraintStart_toStartOf="parent">
     </TextView>
+
+    <TextView
+        android:id="@+id/math_avg_label"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/math_avg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reading_avg_tv"
+        app:layout_constraintStart_toStartOf="parent">
+    </TextView>
+
     <TextView
         android:id="@+id/math_avg_tv"
-        android:textSize="20sp"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:layout_marginTop="4dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/reading_avg_tv"
-        app:layout_constraintStart_toStartOf="parent"
-        android:padding="@dimen/title_padding"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/math_avg_label"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/writing_avg_label"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/writing_avg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/math_avg_tv"
+        app:layout_constraintStart_toStartOf="parent">
+    </TextView>
+
     <TextView
         android:id="@+id/writing_avg_tv"
-        android:textSize="20sp"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:layout_marginTop="4dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/math_avg_tv"
-        app:layout_constraintStart_toStartOf="parent"
-        android:padding="@dimen/title_padding"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/writing_avg_label"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
